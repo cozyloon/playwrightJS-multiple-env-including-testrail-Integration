@@ -1,4 +1,5 @@
-// loginUtils.js
+const LoginPage = require('../pages/loginPage');
+
 async function login(page) {
     const loginPage = new LoginPage(page);
     await loginPage.navigate();
