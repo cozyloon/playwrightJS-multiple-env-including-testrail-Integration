@@ -1,12 +1,13 @@
 const {test, expect} = require('@playwright/test');
 const LoginPage = require('../pages/loginPage');
+const login = require('../utils/loginUtils');
 const DashboardPage = require('../pages/dashboardPage');
 
 const env = process.env.ENV || 'qa';
 
 test.describe(`${env.toUpperCase()} Environment Tests`, () => {
     test.beforeEach(async ({page}) => {
-        // Any setup steps before each test can go here
+        await login(page);
     });
 
     test(`should login and navigate to the dashboard in ${env.toUpperCase()} environment`, async ({page}) => {
