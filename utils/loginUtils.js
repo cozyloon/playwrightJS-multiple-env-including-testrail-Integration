@@ -5,7 +5,7 @@ async function login(page) {
     await loginPage.navigate();
     const username = process.env.USERNAME;
     const password = process.env.PASSWORD;
-    await loginPage.signIn(username, password);
+    await loginPage.login(username, password);
 }
 
 module.exports = login;
