@@ -1,0 +1,29 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="6.727188">
+<testsuite name="loginTest.spec.js" timestamp="2024-10-26T06:59:08.823Z" hostname="chromium" tests="1" failures="1" skipped="0" time="4.407" errors="0">
+<testcase name="QA Environment Tests › TC1 | should login and navigate to the dashboard in QA environment" classname="loginTest.spec.js" time="4.407">
+<properties>
+<property name="test_id" value="TC1">
+</property>
+</properties>
+<failure message="loginTest.spec.js:12:5 TC1 | should login and navigate to the dashboard in QA environment" type="FAILURE">
+<![CDATA[  [chromium] › loginTest.spec.js:12:5 › QA Environment Tests › TC1 | should login and navigate to the dashboard in QA environment 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "Swag Lab"
+    Received: "Swag Labs"
+
+      16 |         const homePage = new HomePage(page);
+      17 |         const appLogo = await homePage.getAppLogoName();
+    > 18 |         expect(appLogo.trim()).toBe('Swag Lab');
+         |                                ^
+      19 |     });
+      20 | });
+      21 |
+
+        at C:\Users\csangeeth\OneDrive - Wiley\Desktop\my\playwright-js-multiple-env\tests\loginTest.spec.js:18:32
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>
