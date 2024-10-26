@@ -9,10 +9,11 @@ test.describe(`${env.toUpperCase()} Environment Tests`, () => {
         await login(page);
     });
 
-    test(`should login and navigate to the dashboard in ${env.toUpperCase()} environment`, async ({page}) => {
+    test(`TC1 | should login and navigate to the dashboard in ${env.toUpperCase()} environment`, async ({page},testInfo) => {
+        
+        testInfo.annotations.push({ type: 'test_id', description: 'TC1' });
+        
         const dashboardPage = new DashboardPage(page);
-
-        // Assert dashboard username
         const dashBoardUserName = await dashboardPage.getDashboardUserName();
         expect(dashBoardUserName.trim()).toBe('Chathumal Dissanayaka');
     });
