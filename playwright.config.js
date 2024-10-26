@@ -1,5 +1,10 @@
 const {defineConfig, devices} = require('@playwright/test');
 
+const testRailOptions = {
+  embedAnnotationsAsProperties: true,
+  outputFile: './test-results/junit-report.xml'
+};
+
 module.exports = defineConfig({
     globalSetup: './utils/globalSetup.js',
     testDir: './tests',
@@ -7,7 +12,11 @@ module.exports = defineConfig({
     forbidOnly: !!process.env.CI,
     retries: process.env.CI ? 2 : 0,
     workers: process.env.CI ? 1 : undefined,
-    reporter: 'html',
+    reporter: [
+        ['list'],
+        ['html', { outputFolder: 'reports', open: 'never' }],
+        ['junit', testRailOptions]
+  ],
     use: {
         trace: 'on-first-retry',
         headless: false,
