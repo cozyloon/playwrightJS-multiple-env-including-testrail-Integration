@@ -1,6 +1,6 @@
 const {test, expect} = require('@playwright/test');
 const login = require('../utils/loginUtils');
-const DashboardPage = require('../pages/dashboardPage');
+const HomePage = require('../pages/homePage');
 
 const env = process.env.ENV || 'qa';
 
@@ -13,8 +13,8 @@ test.describe(`${env.toUpperCase()} Environment Tests`, () => {
         
         testInfo.annotations.push({ type: 'test_id', description: 'TC1' });
         
-        const dashboardPage = new DashboardPage(page);
-        const dashBoardUserName = await dashboardPage.getDashboardUserName();
-        expect(dashBoardUserName.trim()).toBe('Chathumal Dissanayaka');
+        const homePage = new HomePage(page);
+        const appLogo = await homePage.getAppLogoName();
+        expect(appLogo.trim()).toBe('Swag Lab');
     });
 });
