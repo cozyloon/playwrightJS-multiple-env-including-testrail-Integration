@@ -6,8 +6,9 @@ npm i
 ```
 
 Create env files for QA and DEV 
-.env.qa 
-.env.dev
+
+```.env.qa```
+```.env.dev```
 
 How to run the tests in Windows
 
