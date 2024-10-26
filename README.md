@@ -1,16 +1,16 @@
 # Playwright JS multiple env with testrail integration
 
-Install packages
+### Install packages
 ```bash
 npm i
 ```
 
-Create env files for QA and DEV 
+### Create env files for QA and DEV 
 
 ```.env.qa```
 ```.env.dev```
 
-How to run the tests in Windows
+### How to run the tests in Windows
 
 ```bash
 $env:ENV="dev"; npx playwright test
