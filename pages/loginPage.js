@@ -1,18 +1,16 @@
 class LoginPage {
     constructor(page) {
         this.page = page;
-        this.usernameInput = "//input[@id='username']";
+        this.usernameInput = "//input[@id='user-name']";
         this.passwordInput = "//input[@id='password']";
-        this.loginButton = "//input[@value='Log In']";
+        this.loginButton = "//input[@id='login-button']";
     }
 
-    async navigate(){
-        await this.page.goto(process.env.WEB_URL);
+    async navigate(url) {
+        await this.page.goto(url);
     }
-    async login() {
-        const username = process.env.USERNAME;
-        const password = process.env.PASSWORD;
 
+    async login(username, password) {
         await this.page.fill(this.usernameInput, username);
         await this.page.fill(this.passwordInput, password);
         await this.page.click(this.loginButton);
